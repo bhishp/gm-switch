@@ -2,6 +2,7 @@
   @apply inline-block relative align-middle leading-normal;
   --track-width: 3.5rem;
   --track-height: 1.5rem;
+  font-family: Georgia,Times,Times New Roman,serif;
 }
 
 .switch__input {
