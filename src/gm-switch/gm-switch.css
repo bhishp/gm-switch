@@ -1,0 +1,35 @@
+.switch {
+  @apply inline-block relative align-middle leading-normal;
+  --track-width: 2.875rem;
+  --track-height: 1.5rem;
+}
+
+.switch__input {
+  @apply hidden;
+}
+
+.switch__track {
+  @apply rounded-full transition duration-150 bg-gray-300 flex shrink-0 justify-start box-content cursor-pointer;
+  padding: 2px;
+  width: var(--track-width);
+  height: var(--track-height);
+}
+.switch__track[data-checked=true] {
+  @apply bg-blue-500;
+}
+.switch__track[data-focused=true] {
+  @apply shadow-outline;
+}
+.switch__track[data-disabled=true] {
+  @apply opacity-40 cursor-not-allowed;
+}
+
+.switch__thumb {
+  @apply bg-white transition-transform duration-200;
+  border-radius: inherit;
+  width: var(--track-height);
+  height: var(--track-height);
+}
+.switch__thumb[data-checked=true] {
+  transform: translateX(calc(var(--track-width) - var(--track-height)));
+}
