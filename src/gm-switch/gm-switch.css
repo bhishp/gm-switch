@@ -1,6 +1,6 @@
 .switch {
   @apply inline-block relative align-middle leading-normal;
-  --track-width: 2.875rem;
+  --track-width: 3.5rem;
   --track-height: 1.5rem;
 }
 
@@ -9,13 +9,16 @@
 }
 
 .switch__track {
-  @apply rounded-full transition duration-150 bg-gray-300 flex shrink-0 justify-start box-content cursor-pointer;
+  @apply rounded-full transition duration-150 flex shrink-0 justify-start box-content cursor-pointer;
+  /*@apply bg-gray-300;*/
+  @apply bg-black;
   padding: 2px;
   width: var(--track-width);
   height: var(--track-height);
 }
 .switch__track[data-checked=true] {
-  @apply bg-blue-500;
+  @apply bg-white;
+  /*@apply bg-blue-500;*/
 }
 .switch__track[data-focused=true] {
   @apply shadow-outline;
@@ -25,11 +28,22 @@
 }
 
 .switch__thumb {
-  @apply bg-white transition-transform duration-200;
+  @apply bg-gray-100 transition-transform duration-200;
   border-radius: inherit;
   width: var(--track-height);
   height: var(--track-height);
 }
 .switch__thumb[data-checked=true] {
+  @apply bg-gray-900;
   transform: translateX(calc(var(--track-width) - var(--track-height)));
+}
+
+.switch__icon {
+  @apply text-white text-sm ml-auto;
+  padding-right: 2px;
+}
+.switch__icon[data-checked=true] {
+  @apply text-black;
+  transform: translateX(calc(var(--track-height) - var(--track-width) + 2px));
+  padding-right: 0 !important;
 }

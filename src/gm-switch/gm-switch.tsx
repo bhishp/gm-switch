@@ -26,10 +26,6 @@ export const GMSwitch = (p: React.DetailedHTMLProps<React.InputHTMLAttributes<HT
     onMouseLeave: () => setHovered(false),
   });
 
-  const getThumbProps = () => ({
-    ...getStateProps(),
-  });
-
   return (
     <label className="switch">
       <input
@@ -49,8 +45,15 @@ export const GMSwitch = (p: React.DetailedHTMLProps<React.InputHTMLAttributes<HT
       >
         <span
           className="switch__thumb"
-          {...getThumbProps()}
+          {...getStateProps()}
         />
+        <span
+          className="switch__icon"
+          {...getStateProps()}
+        >
+          {checked ? 'gn.' : 'gm.'}
+        </span>
+
       </span>
     </label>
   )
