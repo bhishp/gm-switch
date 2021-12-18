@@ -16,27 +16,31 @@ const variantGm: PartsStyleFunction<typeof parts> = (props) => {
       alignItems: 'center',
     },
     track: {
-      bg: 'black',
+      bg: 'white',
+      borderColor: 'gray.900',
+      borderWidth: '1px',
       _checked: {
-        bg: 'white',
+        borderColor: 'gray.100',
+        borderWidth: '1px',
+        bg: 'black',
       },
     },
     thumb: {
-      bg: 'gray.100',
+      bg: 'gray.900',
       _checked: {
-        bg: 'gray.900',
+        bg: 'gray.100',
       },
     },
     // this is a child element that sits alongside the thumb in the dom, therefore requires transforming it to sit within the track
     label: {
-      color: 'white',
+      color: 'black',
       fontSize: 'sm',
       ml: 'auto',
       pr: '2px',
       fontFamily: 'gm',
       transform: `translate(calc(-1 * ${$width.reference} / 2), -2px)`,
       _checked: {
-        color: 'black',
+        color: 'white',
         transform: `translate(calc(-1 * ${$width.reference} + 2px), -2px)`,
       },
     },
