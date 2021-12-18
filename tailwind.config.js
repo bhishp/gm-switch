@@ -1,5 +1,6 @@
 module.exports = {
   content: ["./src/**/*.{ts,tsx}"],
+  plugins: [],
   theme: {
     extend: {
       boxShadow: {
@@ -7,5 +8,5 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  darkMode: 'class'
 }

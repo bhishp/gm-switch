@@ -1,25 +1,19 @@
 import React from 'react';
 import { GMSwitch } from './gm-switch/gm-switch';
-import logo from './logo.svg';
-import './App.css';
 
 function App() {
+  const [darkMode, setDarkMode] = React.useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className={darkMode ? 'dark' : ''}>
+      <header className="
+      bg-white dark:bg-gray-700 text-gray-900 dark:text-white
+      min-h-screen flex flex-col items-center justify-center text-4xl gap-4">
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          Toggle this...
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <GMSwitch />
+        <GMSwitch onChange={e => {
+          setDarkMode(e.target.checked)
+        }} />
       </header>
     </div>
   );

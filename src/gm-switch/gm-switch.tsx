@@ -35,10 +35,13 @@ export const GMSwitch = (p: React.DetailedHTMLProps<React.InputHTMLAttributes<HT
       <input
         className="switch__input"
         type="checkbox"
-        onChange={e => setChecked(e.target.checked)}
         onBlur={() => setFocused(false)}
         onFocus={() => setFocused(true)}
         {...p}
+        onChange={e => {
+          setChecked(e.target.checked)
+          p.onChange && p.onChange(e);
+        }}
       />
       <span
         className="switch__track"
